@@ -2,7 +2,6 @@ import { Text, TouchableOpacity, View } from "react-native";
 import styles from "../../styles";
 
 import { StackScreenProps } from '@react-navigation/stack';
-import { StackProps } from "../navigators/StackNavigator";
 
 
 
@@ -16,11 +15,7 @@ export const Settings = ({navigation}: Props) => {
 
             <Text style={styles.screenText}>Settings</Text>
 
-            
-            <TouchableOpacity
-                onPress={() => navigation.navigate('Stack', { screen: 'Profile' })}>
-                <Text>Ir a pagina 1</Text>
-            </TouchableOpacity>
+          
         </View>
         
     );
