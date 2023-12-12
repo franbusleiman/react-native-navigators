@@ -14,8 +14,9 @@ export const BottomTab = () => {
                 backgroundColor: 'white'
             }}
             labeled={false}
+        
                     >
-            <Tab.Screen name="Stack" component={StackNavigator} options={{ tabBarIcon: ({ color }) => <Icon name="file-tray-stacked-outline" size={30} color={color} /> }} />
+            <Tab.Screen name="Stack" component={StackNavigator}  options={{ tabBarIcon: ({ color }) => <Icon name="file-tray-stacked-outline" size={30} color={color} /> }} />
             <Tab.Screen name="AnOtherTab" component={AnOtherTab} options={{ tabBarIcon: ({ color }) => <Icon name="diamond-outline" size={30} color={color} /> }} />
 
         </Tab.Navigator>
