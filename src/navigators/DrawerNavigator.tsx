@@ -1,6 +1,5 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Settings } from '../screens/Settings';
-import { StackNavigator } from './StackNavigator';
 import { BottomTab } from './BottomTab';
 
 const Drawer = createDrawerNavigator();

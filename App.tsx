@@ -1,38 +1,46 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DarkTheme as NavigationDarkTheme,
+} from '@react-navigation/native'; 
 import { DrawerNavigator } from './src/navigators/DrawerNavigator';
 import { AuthProvider } from './src/context/AuthContext';
-import { DefaultTheme, PaperProvider } from 'react-native-paper';
-import ThemeProvider from './ThemeProvider';
+import { MD3DarkTheme,  PaperProvider, adaptNavigationTheme } from 'react-native-paper';
 
 
-const theme = {
-  ...DefaultTheme,
-  roundness: 2,
+const { DarkTheme } = adaptNavigationTheme({
+  reactNavigationDark: NavigationDarkTheme,
+});
+
+const CombinedDarkTheme = {
+  ...MD3DarkTheme,
+  ...DarkTheme,
   colors: {
-    ...DefaultTheme.colors,
-    primary: '#3498db', // color primario
-    accent: '#f1c40f', // color de acento
-    background: '#ecf0f1', // color de fondo
-    text: '#2c3e50', // color del texto
-  },
+    ...MD3DarkTheme.colors,
+    ...DarkTheme.colors,
+    text: 'white'
+  }
 };
+
+
 export default function App() {
+
+  console.log('CustomDefaultTheme:', CombinedDarkTheme);
+
   return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer>
+    <PaperProvider theme={CombinedDarkTheme}>
+      <NavigationContainer theme={CombinedDarkTheme}>
         <AppState>
           <DrawerNavigator />
         </AppState>
       </NavigationContainer>
     </PaperProvider>
-    );
+  );
 }
 
-
-      const AppState = ({children}: any) => {
+const AppState = ({ children }: any) => {
   return <AuthProvider>
-        {children}
-      </AuthProvider>
+    {children}
+  </AuthProvider>
 }
