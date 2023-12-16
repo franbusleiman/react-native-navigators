@@ -46,7 +46,6 @@ export const Pagina2 = () => {
 
 const LoggableText = (props: any) => {
     const styles = StyleSheet.flatten(props.style); // Flatten the styles
-    console.log('Applied Styles:', styles);
 
     return <Text {...props} />;
 };

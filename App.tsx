@@ -26,8 +26,6 @@ const CombinedDarkTheme = {
 
 export default function App() {
 
-  console.log('CustomDefaultTheme:', CombinedDarkTheme);
-
   return (
     <PaperProvider theme={CombinedDarkTheme}>
       <NavigationContainer theme={CombinedDarkTheme}>

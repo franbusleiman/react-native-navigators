@@ -23,8 +23,7 @@ export const StackNavigator = ()=>  {
     <Stack.Navigator
     screenOptions={
         {
-            headerShown: false, 
-        
+            headerShown: false
           }}
         >
           
